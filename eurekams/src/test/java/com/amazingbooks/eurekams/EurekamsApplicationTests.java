@@ -1,10 +1,10 @@
-package com.amazingbooks.apigateway;
+package com.amazingbooks.eurekams;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApigatewayApplicationTests {
+class EurekamsApplicationTests {
 
     @Test
     void contextLoads() {
