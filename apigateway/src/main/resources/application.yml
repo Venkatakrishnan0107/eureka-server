@@ -1,0 +1,29 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: bookmsId
+          uri: lb://BOOK-MS
+          predicates:
+            - Path=/amazingGateway/books/**
+          filters:
+            - StripPrefix=1
+        - id: isssuermsId
+          uri: lb://ISSUE-MS
+          predicates:
+            - Path=/amazingGateway/issue/**
+          filters:
+            - StripPrefix=1
+#while running with docker need to enable the below
+#eureka:
+#  instance:
+#    preferIpAddress: true
+#while running in localhost need to enable the below
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
